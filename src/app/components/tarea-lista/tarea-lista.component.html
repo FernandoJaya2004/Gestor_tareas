@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let tarea of tareas">
+      {{ tarea.nombre }} - {{ tarea.estado }}
+      <select [(ngModel)]="tarea.estado" (change)="actualizarEstado(tarea.id, tarea.estado)">
+        <option value="pendiente">Pendiente</option>
+        <option value="en progreso">En Progreso</option>
+        <option value="finalizada">Finalizada</option>
+      </select>
+      <button (click)="eliminar(tarea.id)">Eliminar</button>
+    </li>
+  </ul>
+  
